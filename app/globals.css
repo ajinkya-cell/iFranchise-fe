@@ -1,0 +1,116 @@
+/* ✅ ALWAYS FIRST — imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap');
+
+/* Tailwind */
+@import "tailwindcss";
+
+/* Theme */
+@theme {
+  --color-bg: #030303;
+  --color-surface: #0a0a0b;
+  --color-muted: #52525b;
+  --color-secondary: #a1a1aa;
+  --color-purple: #8b5cf6;
+  --color-pink: #d946ef;
+}
+
+/* Base styles */
+body {
+  background: var(--color-bg);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Serif helper */
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glow border (hero buttons) */
+.action-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8b5cf6, #d946ef);
+  filter: blur(12px);
+  opacity: 0.3;
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+.action-glow:hover::before {
+  opacity: 0.5;
+}
+
+/* Card inner highlight */
+.card-highlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Beam glow */
+.beam::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 10px;
+  background: #8b5cf6;
+  filter: blur(10px);
+  border-radius: 50%;
+}
+
+/* Grid corner + */
+.grid-corners::before,
+.grid-corners::after {
+  content: '+';
+  position: absolute;
+  color: #52525b;
+  font-size: 10px;
+  top: -7px;
+  opacity: 0.5;
+}
+
+.grid-corners::before {
+  left: calc(50% - 640px - 4px);
+}
+.grid-corners::after {
+  right: calc(50% - 640px - 4px);
+}
+.cta-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(139, 92, 246, 0.25) 0%,
+    rgba(139, 92, 246, 0.12) 30%,
+    rgba(139, 92, 246, 0.05) 55%,
+    transparent 75%
+  );
+  filter: blur(40px);
+}
