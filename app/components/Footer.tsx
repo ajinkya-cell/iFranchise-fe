@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400 text-sm">
               <li className="hover:text-white transition">Terms of Service</li>
               <li className="hover:text-white transition">Privacy Policy</li>
-              <li className="hover:text-white transition">FDD Disclosures</li>
+              <li className="hover:text-white transition">Disclosures</li>
             </ul>
           </div>
         </div>
