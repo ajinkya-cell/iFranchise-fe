@@ -61,7 +61,7 @@ export default function Footer() {
         {/* BOTTOM */}
         <div className="border-t border-white/10 pt-4 flex items-center justify-between text-xs text-gray-500">
 
-          <span>© 2024 iFranchise Systems Inc.</span>
+          <span>© 2025 iFranchise Systems Inc.</span>
 
           {/* ICONS */}
           <div className="flex items-center gap-3">
